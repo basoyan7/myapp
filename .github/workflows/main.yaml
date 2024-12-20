@@ -12,7 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Create new file
+      - name: Docker build
         run: |
-          docker build -t my-image:latest .
+          docker build -t my-image:latest -f Dockerfile-app .
 
