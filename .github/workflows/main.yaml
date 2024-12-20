@@ -14,27 +14,5 @@ jobs:
 
       - name: Create new file
         run: |
-          echo "Hello All" >> newfile.txt
-          echo "Goodbye All" >> newfile.txt
-          cat newfile.txt
+          bash ./funny-script.sh
 
-  job2:
-    runs-on: ubuntu-latest
-    needs: job1
-    steps:
-    - name: Test if file exists
-      run: |
-        if [ -f newfile.txt ]; then
-          echo "File exists"
-          rm newfile.txt
-        else
-          echo "File does not exist"
-        fi
-
-  job3:
-    runs-on: ubuntu-latest
-    needs: job1
-    steps:
-    - name: Test if file exists
-      run: |
-        echo "My new job"
