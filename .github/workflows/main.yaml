@@ -15,4 +15,11 @@ jobs:
       - name: Docker build
         run: |
           docker build -t my-image:latest -f Dockerfile-app .
+          mkdir -p images
+          docker save my-image:latest > images/my-image.tar
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: my-image
+          path: images/my-image.tar
 
