@@ -13,11 +13,11 @@ jobs:
       - name: Print Hello Worl
         run: echo "Hello World!"
 
-      - name: Create new file
-        run: |
-          echo "Hello All" >> newfile.txt
-          echo "Goodbye All" >> newfile.txt
-          cat newfile.txt
+      # - name: Create new file
+      #   run: |
+      #     echo "Hello All" >> newfile.txt
+      #     echo "Goodbye All" >> newfile.txt
+      #     cat newfile.txt
 
       - name: Test if file exists
         run: |
