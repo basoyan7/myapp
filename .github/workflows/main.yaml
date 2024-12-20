@@ -14,5 +14,5 @@ jobs:
 
       - name: Create new file
         run: |
-          bash ./funny-script.sh
+          docker build -t my-image:latest .
 
