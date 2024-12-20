@@ -18,14 +18,14 @@ jobs:
           echo "Goodbye All" >> newfile.txt
           cat newfile.txt
 
-    job2:
-      runs-on: ubuntu-latest
-      steps:
-      - name: Test if file exists
-        run: |
-          if [ -f newfile.txt ]; then
-            echo "File exists"
-            rm newfile.txt
-          else
-            echo "File does not exist"
-          fi
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Test if file exists
+      run: |
+        if [ -f newfile.txt ]; then
+          echo "File exists"
+          rm newfile.txt
+        else
+          echo "File does not exist"
+        fi
