@@ -17,6 +17,9 @@ jobs:
           docker build -t my-image:latest -f Dockerfile-app .
           mkdir -p images
           docker save my-image:latest > images/my-image.tar
+          docker tag my-image:latest basoyan/my-image:latest
+          echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u basoyan --password-stdin
+          docker push basoyan/my-image:latest
 
       - uses: actions/upload-artifact@v4
         with:
