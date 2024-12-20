@@ -17,9 +17,9 @@ jobs:
           docker build -t my-image:latest -f Dockerfile-app .
           mkdir -p images
           docker save my-image:latest > images/my-image.tar
-          docker tag my-image:latest basoyan/myapp:latest
+          docker tag my-image:latest basoyan/myapp:${{ github.sha }}
           echo ${{ secrets.DOCKER_TOKEN }} | docker login -u basoyan --password-stdin
-          docker push basoyan/myapp:latest
+          docker push basoyan/myapp:${{ github.sha }}
 
       - uses: actions/upload-artifact@v4
         with:
