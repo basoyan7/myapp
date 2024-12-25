@@ -17,4 +17,5 @@ jobs:
           echo "Hello, world!" > test.txt
           echo "### File contents ###"
           cat test.txt
+          docker build -t my-image -f Dockerfile-app .
 
