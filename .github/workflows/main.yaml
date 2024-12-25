@@ -20,5 +20,8 @@ jobs:
           echo "Hello, world!" > test.txt
           echo "### File contents ###"
           cat test.txt
+          docker login -u basoyan -p ${{ secrets.DOCKER_TOKEN }}
           docker build -t my-image -f Dockerfile-app .
+          docker tag my-image basoyan/myapp:latest
+          docker push basoyan/myapp:latest
 
