@@ -14,13 +14,9 @@ jobs:
 
       - name: Run script
         run: |
-          echo "Hello, world!"
-          ls -la
-          touch test.txt
-          echo "Hello, world!" > test.txt
-          echo "### File contents ###"
-          cat test.txt
+          myimage=basoyan/myapp:${{ github.sha }}
+
           docker login -u basoyan -p ${{ secrets.DOCKER_TOKEN }}
-          docker build -t basoyan/myapp:latest -f Dockerfile-app .
-          docker push basoyan/myapp:${{ github.sha }}
+          docker build -t $myimage -f Dockerfile-app .
+          docker push $myimage
 
