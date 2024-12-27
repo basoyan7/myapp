@@ -24,6 +24,15 @@ jobs:
         run: |
           cat index.html | grep -i "Babken"
 
+      - name: test Website
+        working-directory: ./website
+        run: |
+          nnpm install
+          npm install -g gatsby-cli
+          gatsby serve
+          curl "http://localhost:9000" | grep -q "Gatsby"
+
+
 
 
 
