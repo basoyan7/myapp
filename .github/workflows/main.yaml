@@ -19,6 +19,7 @@ jobs:
           echo "Password: $password"
   Robert:
     runs-on: ubuntu-latest
+    needs: Babken
     steps:
       - name: Test Variables
         run: |
