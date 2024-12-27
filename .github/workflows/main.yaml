@@ -20,6 +20,8 @@ jobs:
   Robert:
     runs-on: ubuntu-latest
     needs: Babken
+    env:
+      name: Robert
     steps:
       - name: Test Variables
         run: |
