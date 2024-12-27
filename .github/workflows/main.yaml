@@ -10,12 +10,16 @@ env:
   password: ${{ secrets.PASSWORD }}
 
 jobs:
-  job1:
+  Babken:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
+      - name: Test Variables
+        run: |
+          echo "Name: $name"
+          echo "Password: $password"
+  Robert:
+    runs-on: ubuntu-latest
+    steps:
       - name: Test Variables
         run: |
           echo "Name: $name"
