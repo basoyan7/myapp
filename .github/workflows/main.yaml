@@ -9,14 +9,7 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
       - name: Run script
         run: |
-          myimage=basoyan/myapp:${{ github.sha }}
-
-          docker login -u basoyan -p ${{ secrets.DOCKER_TOKEN }}
-          docker build -t $myimage -f Dockerfile-app .
-          docker push $myimage
-
+          pwd
+          ls -la
