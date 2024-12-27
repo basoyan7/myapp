@@ -22,7 +22,7 @@ jobs:
       - name: Test
         working-directory: ./website/public
         run: |
-          cat index.html | grep -i "Gatsby"
+          cat index.html | grep -i "Babken"
 
 
 
