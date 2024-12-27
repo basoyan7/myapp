@@ -12,20 +12,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Run script
+      - name: Build Website
         working-directory: ./website
         run: |
           npm install
           npm install -g gatsby-cli
           gatsby build
-          echo "Build complete"
-          ls
 
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: my-artifact
-          path: |
-            ./website/public
+      - name: Test
+        working-directory: ./website/public
+        run: |
+          cat index.html | grep -i "Gatsby"
+
+
 
 
